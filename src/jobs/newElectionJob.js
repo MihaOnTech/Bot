@@ -7,6 +7,7 @@ const { cli } = require('winston/lib/winston/config');
 
 let result = 4
 
+
 async function searchFunction(client){
    console.log("SEARCH FUNCTION");
    const elections = await api.getElections();

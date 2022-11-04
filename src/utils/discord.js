@@ -7,3 +7,4 @@ async function VotarChannel(interaction) {
 module.exports = {
     VotarChannel: VotarChannel
 };
+

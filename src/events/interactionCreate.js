@@ -4,6 +4,7 @@ const { emitVote } = require('../components/votar-modal');
 const votacion = require('../controlers/votacion');
 const votar = require('../controlers/votar');
 
+
 module.exports = {
 	name: Events.InteractionCreate,
 	async execute(interaction) {

@@ -1,6 +1,7 @@
 const { Events } = require('discord.js');
 const { schedule } = require('../jobs/newElectionJob');
 
+
 module.exports = {
 	name: Events.ClientReady,
 	once: true,

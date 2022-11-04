@@ -10,6 +10,7 @@ const votarCh = fs.readFile("./src/config.json", "utf8", (err, jsonString) => {
       console.log("Channels:", channels.votar);
       console.log("Channel Id:", channels["votar"]);
 
+      
       return channels["votar"];
 
     } catch (err) {

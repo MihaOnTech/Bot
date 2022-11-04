@@ -3,6 +3,7 @@ const api = require('../utils/api');
 const { Logger } = require('../utils/logger');
 const logger = Logger.getInstance();
   
+
 function scheduler (param) {
     cron.schedule('*/1 * * * *', () => {
     try {

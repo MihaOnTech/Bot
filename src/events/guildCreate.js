@@ -16,6 +16,7 @@ const channelsToCreate = [
 	
 ];
 
+
 module.exports = {
 	name: Events.GuildCreate,
 	once: true,

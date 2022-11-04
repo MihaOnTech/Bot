@@ -47,4 +47,5 @@ async function createElection(number, question, choice1, choice2, choice3, dateT
     return response;
 }
 
+
 module.exports = { getElections, createElection }

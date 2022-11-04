@@ -42,7 +42,7 @@ async function controller(interaction) {
             await interaction.editReply({ content: 'ERROR Creando Votacion', ephemeral: true });
         } else {
             await interaction.editReply({ content: 'Votación Creada!!', ephemeral: true });
-
+            
             // Enviar embed
             const embed = votarEmbed.create(number, question, choice1, choice2, choice3);
             const buttonId = `voteButton_${number}`;

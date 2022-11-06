@@ -3,10 +3,6 @@ const cron = require('node-cron');
 const api = require('../utils/api');
 const votarEmbed = require('../components/votar-embed');
 const botonEmitVote = require('../components/votar-button');
-const { cli } = require('winston/lib/winston/config');
-
-let result = 4
-
 
 async function searchFunction(client){
    console.log("SEARCH FUNCTION");
@@ -35,9 +31,9 @@ async function searchFunction(client){
 })
 };
 
-function schedule(client){
+function scheduleJob(client){
    const scheduler = cron.schedule('*/10 * * * * *', searchFunction, { scheduled: false });
    return scheduler;
 }
 
-module.exports = { schedule };
+module.exports = { scheduleJob };

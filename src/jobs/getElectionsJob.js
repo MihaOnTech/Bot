@@ -2,6 +2,7 @@ const cron = require('node-cron')
 const api = require('../utils/api');
 const { Logger } = require('../utils/logger');
 const logger = Logger.getInstance();
+const db = require('../../models');
   
 
 function scheduler (param) {

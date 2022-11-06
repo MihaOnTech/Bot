@@ -42,13 +42,13 @@ async function controller(interaction) {
             await interaction.editReply({ content: 'ERROR Creando Votacion', ephemeral: true });
         } else {
             await interaction.editReply({ content: 'Votación Creada!!', ephemeral: true });
-            
+
             // Enviar embed
             const embed = votarEmbed.create(number, question, choice1, choice2, choice3);
             const buttonId = `voteButton_${number}`;
             const button = botonEmitVote.create(buttonId);
             const content = {embeds: [embed], components: [button]};
-            await interaction.client.channels.fetch('1037281189792317490').then((channel) => {
+            await interaction.client.channels.fetch('1038063972525543464').then((channel) => {
                 channel.send(content);
             })
         }

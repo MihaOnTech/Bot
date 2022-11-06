@@ -3,6 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 // Require the necessary discord.js classes
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
+const Sequelize = require('sequelize');
 const { Logger } = require('./utils/logger');
 const logger = Logger.getInstance();
 

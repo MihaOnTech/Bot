@@ -4,16 +4,14 @@ const api = require('../utils/api');
 async function modalController(interaction) {
     await interaction.deferReply({ ephemeral: true});
     try {
-        const data = await api.getElections();
-        const number = data.length+1;
-        const question = interaction.fields.getTextInputValue('preguntaInput');
-        const choice1 = interaction.fields.getTextInputValue('respuestaInput');
-        const choice2 = interaction.fields.getTextInputValue('respuesta2Input');
-        const choice3 = interaction.fields.getTextInputValue('respuesta3Input');
-        const dateTime = interaction.fields.getTextInputValue('dateTimeInput');
+        const electionId = interaction.fields.getTextInputValue('electionInput');
+        const respuesta = interaction.fields.getTextInputValue('respuestaInput');
+        const password = interaction.fields.getTextInputValue('passwordInput');
 
-        await api.createElection(number, question, choice1, choice2, choice3, dateTime);
-        await interaction.editReply({ content: 'Votación Creada!!', ephemeral: true });
+        const userTag = interaction.user.tag
+
+        const voteId = await api.voterConnect(electionId, userTag, password, respuesta);
+        await interaction.editReply({ content: `Voto emitido! Id:${voteId}`, ephemeral: true });
 
     } catch (error) {
         console.error(error);

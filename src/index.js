@@ -1,13 +1,15 @@
 require('dotenv').config()
 const fs = require('node:fs');
 const path = require('node:path');
+const { ethers } = require("ethers");
+const { VocdoniSDKClient, EnvOptions } = require("@vocdoni/sdk");
 // Require the necessary discord.js classes
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const Sequelize = require('sequelize');
 const { Logger } = require('./utils/logger');
 const logger = Logger.getInstance();
 
-// Create a new client instance
+// Create a new Discord Client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] });
 
 const eventsPath = path.join(__dirname, 'events');
@@ -40,6 +42,6 @@ for (const file of commandFiles) {
 }
 
 
-
+console.log(process.env.DISCORD_TOKEN);
 // Log in to Discord with your client's token
 client.login(process.env.DISCORD_TOKEN);

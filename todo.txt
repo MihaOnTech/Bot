@@ -1,12 +1,15 @@
 - LOGS 
     - design structure
     - add logging 
+
 - TEST
     - design structure
     - each unitary test
+
 - JOBS
     - update db
     - update votar channel
+    
 X DATABASE
     x implement conection
     x models: 

@@ -1,3 +1,4 @@
+'use strict';
 module.exports = (sequelize, Sequelize) => {
     const Users = sequelize.define('users', {
         id: {
@@ -7,9 +8,7 @@ module.exports = (sequelize, Sequelize) => {
             
         },
         discordId: Sequelize.TEXT,
-        name: Sequelize.STRING,
-        pubKey: Sequelize.STRING,
-        privKey: Sequelize.STRING,
+        encyptedWallet: Sequelize.TEXT,
     });
     return Users;    
 }
